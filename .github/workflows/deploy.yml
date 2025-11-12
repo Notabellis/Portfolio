@@ -31,12 +31,14 @@ jobs:
         run: npm run build -- --base-href /Portfolio/
 
       - name: Copy fallback for SPA
-        run: cp dist/portfolio/index.html dist/portfolio/404.html
+        run: cp dist/portfolio/browser/index.html dist/portfolio/browser/404.html
+
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/portfolio
+          path: dist/portfolio/browser
+
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
